@@ -1,5 +1,24 @@
+import AppState.AppState
+
 fun main() {
-    // ваш код начнется здесь
-    // вы не должны ограничиваться только классом Main и можете создавать свои классы по необходимости
-    println("Привет")
+
+
+    do {
+        var endedCode: Int
+        AppState.showScreen()
+        var massage = ""
+        do {
+            massage = AppState.readText()
+            endedCode = AppState.movement(massage)
+
+            if(endedCode ==400) println("Wrong code, pleas try again")
+        } while (endedCode==400)
+
+
+    } while(AppState.locationInApp != "Exit")
+
+
 }
+
+
+
